@@ -1,0 +1,74 @@
+c_number = []
+
+inn = input("PLEASE ENTER YOUR PIN  >")
+
+for i in inn:
+	c_number.append(int(i))
+
+new_c_number = c_number[:-1]
+c_reverse = new_c_number[::-1]
+lgt = len(c_reverse)
+
+evenn = []
+odd = []
+multi = []
+final_plus = []
+final_prod_plus = []
+stringg = []
+join_str = []
+i = 0
+j = 1
+
+# getting the even numbers to be multiplicated
+while (i < lgt):
+	evenn.append(c_reverse[i])
+	i += 2
+
+# getting the odd numbers to be added
+while (j < len(c_number)):
+	odd.append(c_number[j])
+	j += 2
+
+# multiplying the even numbers by 2
+for i in evenn:
+	multi.append(i * 2)
+
+# converting the multiples of 2 to string
+for i in multi:
+	stringg.append(str(i))
+
+# joining the strings by removing the space
+x = "".join(stringg)
+
+for i in x:
+	join_str.append(int(i))
+
+final_prod_plus = sum(join_str)
+final_plus = sum(odd)
+final_sum = final_prod_plus + final_plus
+final_last_digit = str(final_sum)
+
+print(final_last_digit)
+
+
+
+if(final_last_digit[-1] == '0'):
+	print("valid")
+else:
+	print("In valid")	
+
+
+serial_number = c_number
+
+if (serial_number[0] == '4') and (len(serial_number) == 13 or 16):
+    print("VISA")
+elif (serial_number[0:2] in ['51', '52', '53', '54', '55']) and (len(serial_number) == 16):
+    print('MASTERCARD')
+elif (serial_number[0:2] in [ '34', '37']) and (len(serial_number) == 15):
+    print("AMEX")
+else:
+    print("Invalid")
+
+
+
+
