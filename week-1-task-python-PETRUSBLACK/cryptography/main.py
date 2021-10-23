@@ -15,7 +15,7 @@ c = []
 d = []
 e = []
 f = []
-i = 0
+i = 0ygygj
 m = 0
 n = int(input("ENTER YOUR KEY NUMBER.  >"))
 
